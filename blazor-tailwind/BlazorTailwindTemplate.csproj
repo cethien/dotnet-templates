@@ -10,18 +10,11 @@
     <Folder Include="Styles\" />
   </ItemGroup>
 
-  <Target Name="CheckForNpm" BeforeTargets="InstallNpmPackages">
+  <Target Name="CheckForNpm" BeforeTargets="BuildCSS">
     <Exec Command="npm -v" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
     </Exec>
     <Error Condition="'$(ErrorCode)' != '0'" Text="You must install NPM to build this project" />
-  </Target>
-
-  <Target Name="InstallNpmPackages" BeforeTargets="BuildCSS">
-    <Exec Command="npm install" ContinueOnError="true">
-      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
-    </Exec>
-    <Error Condition="'$(ErrorCode)' != '0'" Text="Something went wrong" />
   </Target>
 
   <Target Name="BuildCSS" BeforeTargets="Compile">
