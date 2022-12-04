@@ -1,0 +1,35 @@
+{
+	"author": "Cethien",
+	"classifications": ["Console"],
+	"identity": "ConsoleWithDepencyInjection",
+	"name": "Console + DepencyInjection",
+	"shortName": "consoledi",
+	"tags": {
+		"type": "project",
+		"language": "C#"
+	},
+	"sourceName": "ConsoleWithDepencyInjection",
+	"sources": [
+		{
+			"modifiers": [
+				{
+					"exclude": [
+						"**/.vs/**/*",
+						"**/.vscode/**/*",
+						"**/.idea/**/*",
+						"**/.github/**/*",
+						"**/.devcontainer/**/*",
+						"**/[Bb]in/**",
+						"**/[Oo]bj/**",
+						".template.config/**/*",
+						"**/*.filelist",
+						"**/*.user",
+						"**/*.lock.json",
+						"**/*-lock.json",
+						"**/node_modules/**"
+					]
+				}
+			]
+		}
+	]
+}
