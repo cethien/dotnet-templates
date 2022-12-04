@@ -9,6 +9,7 @@
 		"language": "C#"
 	},
 	"sourceName": "ConsoleWithDepencyInjection",
+	"preferNameDirectory": true,
 	"sources": [
 		{
 			"modifiers": [
@@ -30,6 +31,23 @@
 					]
 				}
 			]
+		}
+	],
+	"primaryOutputs": [
+		{
+			"path": "ConsoleWithDepencyInjection.csproj"
+		}
+	],
+	"postActions": [
+		{
+			"actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+			"description": "Restore NuGet packages required by this project.",
+			"manualInstructions": [
+				{
+					"text": "Run 'dotnet restore'"
+				}
+			],
+			"continueOnError": true
 		}
 	]
 }

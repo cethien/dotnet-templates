@@ -1,0 +1,6 @@
+{
+	"scripts": {
+		"ui:dev": "postcss ./Styles/app.css -o ./wwwroot/css/app.min.css --verbose --watch",
+		"ui:build": "postcss ./Styles/app.css -o ./wwwroot/css/app.min.css --verbose"
+	}
+}
