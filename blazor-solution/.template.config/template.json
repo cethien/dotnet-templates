@@ -1,0 +1,36 @@
+{
+	"author": "Cethien",
+	"classifications": ["Web", "Blazor"],
+	"identity": "BlazorSolution",
+	"name": "Blazor Solution",
+	"shortName": "blazorsln",
+	"tags": {
+		"type": "solution",
+		"language": "C#"
+	},
+	"sourceName": "BlazorSolution",
+	"sources": [
+		{
+			"modifiers": [
+				{
+					"exclude": [
+						"**/.vs/**/*",
+						"**/.vscode/**/*",
+						"**/.idea/**/*",
+						"**/.github/**/*",
+						"**/.devcontainer/**/*",
+						"**/[Bb]in/**",
+						"**/[Oo]bj/**",
+						".template.config/**/*",
+						"**/*.filelist",
+						"**/*.user",
+						"**/*.lock.json",
+						"**/*-lock.json",
+						"**/node_modules/**"
+					]
+				}
+			]
+		}
+	],
+	"preferNameDirectory": true
+}
