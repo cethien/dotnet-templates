@@ -1,0 +1,35 @@
+{
+	"author": "Cethien",
+	"classifications": ["Web", "Blazor"],
+	"identity": "BlazorTailwind",
+	"name": "Blazor Serverside + Tailwind CSS",
+	"shortName": "blazortailwind",
+	"tags": {
+		"type": "project",
+		"language": "C#"
+	},
+	"sourceName": "BlazorTailwindTemplate",
+	"sources": [
+		{
+			"modifiers": [
+				{
+					"exclude": [
+						"**/.vs/**/*",
+						"**/.vscode/**/*",
+						"**/.idea/**/*",
+						"**/.github/**/*",
+						"**/.devcontainer/**/*",
+						"**/[Bb]in/**",
+						"**/[Oo]bj/**",
+						".template.config/**/*",
+						"**/*.filelist",
+						"**/*.user",
+						"**/*.lock.json",
+						"**/*-lock.json",
+						"**/node_modules/**"
+					]
+				}
+			]
+		}
+	]
+}
