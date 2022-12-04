@@ -1,3 +1,3 @@
-# Blazor Tailwind Template
+# Dotnet Templates
 
 templating is fun
