@@ -1,14 +1,15 @@
 {
+	"$schema": "http://json.schemastore.org/template",
 	"author": "Cethien",
 	"classifications": ["Console"],
-	"identity": "ConsoleWithDepencyInjection",
-	"name": "Console + DepencyInjection",
+	"identity": "ConsoleWithDependencyInjection",
+	"name": "Console + DependencyInjection",
 	"shortName": "consoledi",
 	"tags": {
 		"type": "project",
 		"language": "C#"
 	},
-	"sourceName": "ConsoleWithDepencyInjection",
+	"sourceName": "ConsoleWithDependencyInjection",
 	"preferNameDirectory": true,
 	"sources": [
 		{
@@ -35,7 +36,7 @@
 	],
 	"primaryOutputs": [
 		{
-			"path": "ConsoleWithDepencyInjection.csproj"
+			"path": "ConsoleWithDependencyInjection.csproj"
 		}
 	],
 	"postActions": [
