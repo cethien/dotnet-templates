@@ -39,6 +39,23 @@
 			"path": "BlazorTailwindTemplate.csproj"
 		}
 	],
+	"symbols": {
+		"TargetFramework": {
+			"type": "parameter",
+			"description": "",
+			"datatype": "choice",
+			"choices": [
+				{
+					"choice": "net6.0"
+				},
+				{
+					"choice": "net7.0"
+				}
+			],
+			"defaultValue": "net6.0",
+			"replaces": "{TargetFramework}"
+		}
+	},
 	"postActions": [
 		{
 			"actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
