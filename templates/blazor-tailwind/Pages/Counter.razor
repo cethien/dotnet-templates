@@ -2,13 +2,22 @@
 
 <PageTitle>Counter</PageTitle>
 
-
 <h1>Counter</h1>
 
-<p>Current count: @currentCount</p>
+<div class="flex flex-col items-center">
+    <article class="text-center">
+        <p>
+            Current count:
+        </p>
+        <p class="text-2xl text-bolder">
+            @currentCount
+        </p>
+    </article>
 
-<button @onclick="IncrementCount" class="bg-gradient-to-br from-purple-500 to-purple-600 px-4 py-2 rounded text-purple-50 transition duration-300 ease-in-out transform hover:scale-150">Click me</button>
-
+    <button class="button" @onclick="IncrementCount">
+        Click me
+    </button>
+</div>
 
 @code {
     private int currentCount = 0;

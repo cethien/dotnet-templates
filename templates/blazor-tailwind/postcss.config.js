@@ -1,8 +1,11 @@
 module.exports = {
-    plugins: {
-        tailwindcss: {},
-        autoprefixer: {},
-        'postcss-preset-env': {},
-        cssnano: { preset: 'default' }
-    }
-}
+	plugins: {
+		'tailwindcss/nesting': {},
+		tailwindcss: {},
+		autoprefixer: {},
+		'postcss-preset-env': {
+			features: { 'nesting-rules': false },
+		},
+		cssnano: { preset: 'default' },
+	},
+};
