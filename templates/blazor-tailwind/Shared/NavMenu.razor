@@ -1,16 +1,18 @@
 ﻿<div class="navbar">
 
     <div class="flex gap-4 items-center">
-        <img src="logo.svg" alt="logo" class="logo">
-        <div class="flex gap-4 items-center">
-            <NavLink ActiveClass="nav-item-active" class="nav-item" href="/" Match="NavLinkMatch.All">Home</NavLink>
-            <NavLink ActiveClass="nav-item-active" class="nav-item" href="/counter">Counter</NavLink>
-            <NavLink ActiveClass="nav-item-active" class="nav-item" href="/FetchData">Weather</NavLink>
-        </div>
+        <a href="https://github.com/Cethien/dotnet-templates" target="_blank" rel="noopener noreferrer">
+            <img src="logo.svg" class="logo">
+        </a>
+        <nav class="flex gap-4 items-center">
+            <NavLink ActiveClass="text-sky-600 dark:text-sky-300" class="nav-item" href="/" Match="NavLinkMatch.All">Home</NavLink>
+            <NavLink ActiveClass="text-sky-600 dark:text-sky-300" class="nav-item" href="/counter">Counter</NavLink>
+            <NavLink ActiveClass="text-sky-600 dark:text-sky-300" class="nav-item" href="/fetchdata">Weather</NavLink>
+        </nav>
     </div>
 
-    <div class="flex items-center px-4">
-        <DarkModeToggle/>
+    <div class="flex items-center justify-center px-4 gap-4">
+        <DarkModeToggle Classes="text-xl transition duration-200 hover:scale-125 ease-in-out"/>
     </div>
 
 </div>
