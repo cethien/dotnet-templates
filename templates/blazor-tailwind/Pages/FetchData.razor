@@ -12,21 +12,27 @@
 {
 
 <div class='flex items-center self-center'>
-    <div style="border-top-color:transparent" class="w-8 h-8 border-4 border-blue-200 rounded-full animate-spin"></div>
-    <p class="ml-2">Loading...</p>
+    <LoadingSpinner/>
 </div>
 
 }
 else
 {
-    <div class="table">
+    <div class="flex flex-col gap-4 p-2 bg-slate-100 dark:bg-slate-800 rounded shadow">
         <table>
             <thead>
                 <tr>
                     <th>Date</th>
                     <th>Temp. (C)</th>
                     <th>Temp. (F)</th>
-                    <th>Summary</th>
+                    <th>
+                        <div class="flex justify-between items-center gap-4">
+                            Summary
+                            <button class="p-2 items-center justify-center" @onclick="FetchDataAsync">
+                                <i class="@loadClass"></i>
+                            </button>
+                        </div>
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -41,15 +47,29 @@ else
                 }
             </tbody>
         </table>
+
+
     </div>
 }
 </div>
 
 @code {
+    private string? loadClass;
     private WeatherForecast[]? forecasts;
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        if (firstRender)
+        {
+            await FetchDataAsync();
+            StateHasChanged();
+        }
+    }
+
+    private async Task FetchDataAsync(){
+        loadClass = "fas fa-spinner animate-spin";
+        await Task.Delay(2000);
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        loadClass = "fas fa-arrow-rotate-right";
     }
 }
