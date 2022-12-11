@@ -1,0 +1,86 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<div class="flex flex-col">
+@if (forecasts == null)
+{
+
+<div class='flex items-center self-center'>
+    <LoadingSpinner/>
+</div>
+
+}
+else
+{
+    <div class="flex flex-col gap-4 p-2 bg-slate-100 dark:bg-slate-800 rounded shadow">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Temp. (C)</th>
+                    <th>Temp. (F)</th>
+                    <th>
+                        <div class="flex justify-between items-center gap-4">
+                            Summary
+                            <button class="p-2 items-center justify-center" @onclick="FetchDataAsync">
+                                <i class="@loadClass"></i>
+                            </button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var forecast in forecasts)
+                {
+                    <tr>
+                        <td>@forecast.Date.ToShortDateString()</td>
+                        <td>@forecast.TemperatureC</td>
+                        <td>@forecast.TemperatureF</td>
+                        <td>@forecast.Summary</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+}
+</div>
+
+
+@code {
+
+    private string? loadClass;
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await FetchDataAsync();
+            StateHasChanged();
+        }
+    }
+
+    private async Task FetchDataAsync(){
+        loadClass = "fas fa-spinner animate-spin";
+        await Task.Delay(2000);
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        loadClass = "fas fa-arrow-rotate-right";
+    }
+
+    public class WeatherForecast
+    {
+        public DateTime Date { get; set; }
+
+        public int TemperatureC { get; set; }
+
+        public string? Summary { get; set; }
+
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}

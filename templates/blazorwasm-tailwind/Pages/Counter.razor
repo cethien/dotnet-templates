@@ -1,0 +1,61 @@
+﻿@page "/counter"
+@inject ILocalStorageService LocalStorage
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<div class="flex flex-col items-center gap-4">
+
+    <div class="flex items-center justify-center gap-4">
+        <button disabled="@(currentCount == 0)" @onclick="DecrementCount">
+            -
+        </button>
+
+        <article class="m-0 text-center items-center justify-center">
+            <p>
+                Current count:
+            </p>
+            <p class="text-2xl text-bolder">
+                @currentCount
+            </p>
+        </article>
+
+        <button @onclick="IncrementCount">
+            +
+        </button>
+    </div>
+</div>
+
+@code {
+    private int currentCount = 0;
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender){
+            currentCount = await LocalStorage.GetItemAsync<int>("count");
+            StateHasChanged();
+        }
+    }
+
+    private async Task IncrementCount()
+    {
+        currentCount++;
+        await SaveAsync();
+    }
+
+    private async Task DecrementCount()
+    {
+        currentCount--;
+        await SaveAsync();
+    }
+
+    private async Task SaveAsync(){
+        await LocalStorage.SetItemAsync<int>("count", currentCount);
+    }
+}
+
+
+
+
