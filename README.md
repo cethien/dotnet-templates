@@ -2,4 +2,6 @@
 
 templating is fun
 
-note: create global.json first
+```
+note: remember to run "npm install" on tailwind projects
+```
