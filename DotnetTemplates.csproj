@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.1.1</PackageVersion>
+    <PackageVersion>1.1.2</PackageVersion>
     <PackageId>Cethien.Templates</PackageId>
     <Title>Cethien's Templates</Title>
     <Authors>Cethien</Authors>
