@@ -4,7 +4,7 @@
 	"classifications": ["Web", "Blazor"],
 	"identity": "BlazorTailwind",
 	"name": "Blazor Serverside + Tailwind CSS",
-	"shortName": "blazortailwind",
+	"shortName": "blazorservertailwind",
 	"tags": {
 		"type": "project",
 		"language": "C#"
