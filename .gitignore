@@ -476,3 +476,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 templates/blazor-tailwind/wwwroot/css/app.min.css
+nuget.config
