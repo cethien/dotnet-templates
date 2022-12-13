@@ -2,13 +2,15 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.1.2</PackageVersion>
     <PackageId>Cethien.Templates</PackageId>
+    <TargetFramework>net6.0</TargetFramework>
+    <PackageVersion>1.1.2</PackageVersion>
+
     <Title>Cethien's Templates</Title>
     <Authors>Cethien</Authors>
-    <Description>some templates</Description>
+    <Description>some templates I created for common used stuff</Description>
+    <RepositoryUrl>https://github.com/Cethien/dotnet-templates</RepositoryUrl>
     <PackageTags>dotnet-new;templates</PackageTags>
-    <TargetFramework>net6.0</TargetFramework>
 
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
