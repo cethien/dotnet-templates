@@ -57,10 +57,7 @@
 				{
 					"exclude": [
 						"**/.vs/**/*",
-						"**/.vscode/**/*",
 						"**/.idea/**/*",
-						"**/.github/**/*",
-						"**/.devcontainer/**/*",
 						"**/[Bb]in/**",
 						"**/[Oo]bj/**",
 						".template.config/**/*",
