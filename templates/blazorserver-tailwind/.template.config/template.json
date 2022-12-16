@@ -17,9 +17,9 @@
 		}
 	],
 	"symbols": {
-		"TargetFramework": {
+		"framework": {
 			"type": "parameter",
-			"description": "",
+			"description": "chooses framework used by project",
 			"datatype": "choice",
 			"choices": [
 				{
