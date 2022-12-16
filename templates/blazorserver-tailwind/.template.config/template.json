@@ -11,29 +11,6 @@
 	},
 	"sourceName": "BlazorTailwindTemplate",
 	"preferNameDirectory": true,
-	"sources": [
-		{
-			"modifiers": [
-				{
-					"exclude": [
-						"**/.vs/**/*",
-						"**/.vscode/**/*",
-						"**/.idea/**/*",
-						"**/.github/**/*",
-						"**/.devcontainer/**/*",
-						"**/[Bb]in/**",
-						"**/[Oo]bj/**",
-						".template.config/**/*",
-						"**/*.filelist",
-						"**/*.user",
-						"**/*.lock.json",
-						"**/node_modules/**",
-						"**/wwwroot/css/app*.css"
-					]
-				}
-			]
-		}
-	],
 	"primaryOutputs": [
 		{
 			"path": "BlazorTailwindTemplate.csproj"
@@ -54,8 +31,61 @@
 			],
 			"defaultValue": "net6.0",
 			"replaces": "{TargetFramework}"
+		},
+		"enable-vscode": {
+			"type": "parameter",
+			"description": "enable .vscode with recommendations and tasks",
+			"datatype": "bool",
+			"defaultValue": "true"
+		},
+		"enable-docker": {
+			"type": "parameter",
+			"description": "enable Dockerfile",
+			"datatype": "bool",
+			"defaultValue": "true"
+		},
+		"enable-devcontainer": {
+			"type": "parameter",
+			"description": "enable .devcontainer",
+			"datatype": "bool",
+			"defaultValue": "true"
 		}
 	},
+	"sources": [
+		{
+			"modifiers": [
+				{
+					"exclude": [
+						"**/.vs/**/*",
+						"**/.vscode/**/*",
+						"**/.idea/**/*",
+						"**/.github/**/*",
+						"**/.devcontainer/**/*",
+						"**/[Bb]in/**",
+						"**/[Oo]bj/**",
+						".template.config/**/*",
+						"**/*.filelist",
+						"**/*.user",
+						"**/*.lock.json",
+						"**/node_modules/**",
+						"**/wwwroot/css/app.min.css"
+					]
+				},
+				{
+					"condition": "(!enable-vscode)",
+					"exclude": ["**/.vscode/**"]
+				},
+				{
+					"condition": "(!enable-docker)",
+					"exclude": ["**/.dockerignore**", "Dockerfile**"]
+				},
+				{
+					"condition": "(!enable-devcontainer)",
+					"exclude": ["**/.devcontainer/**"]
+				}
+			]
+		}
+	],
 	"postActions": [
 		{
 			"actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
