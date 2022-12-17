@@ -16,17 +16,17 @@ RUN apt-get install -y libpng-dev libjpeg-dev curl libxi6 build-essential libgl1
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
 RUN apt-get install -y nodejs
 WORKDIR /src
-COPY ["BlazorTailwindTemplate.csproj", "./"]
-RUN dotnet restore "BlazorTailwindTemplate.csproj"
+COPY ["BlazorServerTailwindTemplate.csproj", "./"]
+RUN dotnet restore "BlazorServerTailwindTemplate.csproj"
 COPY . .
 WORKDIR "/src/."
 RUN npm install
-RUN dotnet build "BlazorTailwindTemplate.csproj" -c Release -o /app/build
+RUN dotnet build "BlazorServerTailwindTemplate.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "BlazorTailwindTemplate.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "BlazorServerTailwindTemplate.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "BlazorTailwindTemplate.dll"]
+ENTRYPOINT ["dotnet", "BlazorServerTailwindTemplate.dll"]

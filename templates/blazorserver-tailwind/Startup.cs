@@ -1,5 +1,5 @@
 using Blazored.LocalStorage;
-using BlazorTailwindTemplate.Data;
+using BlazorServerTailwindTemplate.Data;
 
 public static class Startup{
     public static void ConfigureServices(this IServiceCollection services, IConfiguration config){
