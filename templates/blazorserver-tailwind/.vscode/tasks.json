@@ -26,7 +26,7 @@
 			"problemMatcher": "$msCompile"
 		},
 		{
-			"label": "watch",
+			"label": "dotnet: watch",
 			"command": "dotnet",
 			"type": "process",
 			"args": [
@@ -35,30 +35,23 @@
 				"--project",
 				"${workspaceFolder}/BlazorServerTailwindTemplate.csproj"
 			],
-			"problemMatcher": "$msCompile"
+			"problemMatcher": "$msCompile",
+			"isBackground": true
 		},
 		{
+			"label": "npm: dev:css",
 			"type": "npm",
-			"script": "install",
-			"group": "clean",
+			"script": "dev:css",
 			"problemMatcher": [],
-			"label": "npm: install",
-			"detail": "install dependencies from package"
+			"isBackground": true
 		},
 		{
-			"type": "npm",
-			"script": "ui:build",
-			"group": "build",
-			"problemMatcher": [],
-			"label": "npm: ui:build",
-			"detail": "postcss ./Styles/app.pcss -o ./wwwroot/css/app.min.css --verbose"
-		},
-		{
-			"type": "npm",
-			"script": "ui:dev",
-			"problemMatcher": [],
-			"label": "npm: ui:dev",
-			"detail": "postcss ./Styles/app.pcss -o ./wwwroot/css/app.min.css --verbose --watch"
+			"label": "dev",
+			"dependsOn": [
+				"dotnet: watch",
+				"npm: dev:css"
+			],
+			"problemMatcher": "$msCompile",
 		}
 	]
 }

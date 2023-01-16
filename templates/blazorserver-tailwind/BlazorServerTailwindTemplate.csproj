@@ -18,8 +18,7 @@
   </Target>
 
   <Target Name="BuildCSS" BeforeTargets="Compile">
-    <Exec EnvironmentVariables="NODE_ENV=production"
-      Command="npm run ui:build"
+    <Exec EnvironmentVariables="NODE_ENV=production" Command="npm run build:css"
       Condition=" '$(Configuration)' == 'Release' " />
   </Target>
 
