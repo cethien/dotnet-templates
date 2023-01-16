@@ -1,8 +1,7 @@
 {
-	"$schema": "https://json.schemastore.org/package",
 	"scripts": {
-		"ui:build": "postcss ./Styles/app.pcss -o ./wwwroot/css/app.min.css --verbose",
-		"ui:dev": "postcss ./Styles/app.pcss -o ./wwwroot/css/app.min.css --verbose --watch"
+		"build:css": "postcss ./Styles/app.scss -o ./wwwroot/css/app.min.css --verbose",
+		"dev:css": "postcss ./Styles/app.scss -o ./wwwroot/css/app.min.css --verbose --watch"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.4.13",

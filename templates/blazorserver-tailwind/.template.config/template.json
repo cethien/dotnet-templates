@@ -1,7 +1,10 @@
 {
 	"$schema": "http://json.schemastore.org/template",
 	"author": "Cethien",
-	"classifications": ["Web", "Blazor"],
+	"classifications": [
+		"Web",
+		"Blazor"
+	],
 	"identity": "BlazorServerTailwind",
 	"name": "Blazor Serverside + Tailwind CSS",
 	"shortName": "blazorservertailwind",
@@ -32,21 +35,15 @@
 			"defaultValue": "net6.0",
 			"replaces": "{TargetFramework}"
 		},
-		"enable-vscode": {
+		"vscode": {
 			"type": "parameter",
 			"description": "enable .vscode with recommendations and tasks",
 			"datatype": "bool",
 			"defaultValue": "true"
 		},
-		"enable-docker": {
+		"docker": {
 			"type": "parameter",
 			"description": "enable Dockerfile",
-			"datatype": "bool",
-			"defaultValue": "true"
-		},
-		"enable-devcontainer": {
-			"type": "parameter",
-			"description": "enable .devcontainer",
 			"datatype": "bool",
 			"defaultValue": "true"
 		}
@@ -69,16 +66,17 @@
 					]
 				},
 				{
-					"condition": "(!enable-vscode)",
-					"exclude": ["**/.vscode/**"]
+					"condition": "(!vscode)",
+					"exclude": [
+						"**/.vscode/**"
+					]
 				},
 				{
-					"condition": "(!enable-docker)",
-					"exclude": ["**/.dockerignore**", "Dockerfile**"]
-				},
-				{
-					"condition": "(!enable-devcontainer)",
-					"exclude": ["**/.devcontainer/**"]
+					"condition": "(!docker)",
+					"exclude": [
+						"**/.dockerignore**",
+						"**Dockerfile**"
+					]
 				}
 			]
 		}
