@@ -28,7 +28,7 @@ else
                     <th>
                         <div class="flex justify-between items-center gap-4">
                             Summary
-                            <button class="p-2 items-center justify-center" @onclick="FetchDataAsync">
+                            <button class="p-2 items-center justify-center" @onclick="FetchDataAsync" disabled="@(isLoading)">
                                 <i class="@loadClass"></i>
                             </button>
                         </div>
@@ -56,6 +56,7 @@ else
 @code {
     private string? loadClass;
     private WeatherForecast[]? forecasts;
+    private bool isLoading = false;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -67,9 +68,11 @@ else
     }
 
     private async Task FetchDataAsync(){
+        isLoading = true;
         loadClass = "fas fa-spinner animate-spin";
         await Task.Delay(2000);
         forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
         loadClass = "fas fa-arrow-rotate-right";
+        isLoading = false;
     }
 }
