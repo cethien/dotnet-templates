@@ -1,17 +1,19 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
-	"name": "Dotnet Templates",
+	"name": ".NET Templates",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/dotnet:0-7.0",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:0-6.0",
 	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers-contrib/features/pnpm:2": {}
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"Fudge.auto-using",
 				"ms-dotnettools.csharp",
+				"Fudge.auto-using",
 				"adrianwilczynski.namespace",
 				"k--kato.docomment",
 				"bradlc.vscode-tailwindcss"
