@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ms-dotnettools.csharp",
+        "Fudge.auto-using",
+        "adrianwilczynski.namespace",
+        "k--kato.docomment",
+        "bradlc.vscode-tailwindcss"
+    ]
+}

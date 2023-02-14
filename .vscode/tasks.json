@@ -1,0 +1,45 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "type": "shell",
+    "command": "dotnet",
+    "problemMatcher": "$msCompile",
+    "tasks": [
+        {
+            "label": "dotnet: pack",
+            "args": [
+                "pack",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary",
+                "-o",
+                "${workspaceFolder}/dist"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "gh: release",
+            "type": "shell",
+            "command": "gh",
+            "args": [
+                "release",
+                "create",
+                "${input:version-tag}",
+                "./dist/*.nupkg",
+                "--generate-notes"
+            ],
+            "problemMatcher": [],
+            "dependsOn": [
+                "dotnet: pack"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "version-tag",
+            "type": "promptString",
+            "default": "v1.2.3",
+            "description": "github release version tag"
+        }
+    ]
+}
