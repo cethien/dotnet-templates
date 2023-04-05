@@ -3,14 +3,19 @@
   <PropertyGroup>
     <PackageType>Template</PackageType>
     <PackageId>Cethien.Templates</PackageId>
-    <TargetFramework>net7.0</TargetFramework>
     <PackageVersion>1.3.2</PackageVersion>
-
+    <TargetFramework>net7.0</TargetFramework>
     <Title>Cethien's Templates</Title>
-    <Authors>Cethien</Authors>
     <Description>some templates I created for common used stuff</Description>
+
+    <Authors>Cethien</Authors>
+    <PackageProjectUrl>https://github.com/Cethien/dotnet-templates</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Cethien/dotnet-templates</RepositoryUrl>
     <PackageTags>dotnet-new;templates</PackageTags>
+
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
 
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>

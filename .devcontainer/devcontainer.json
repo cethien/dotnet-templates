@@ -14,5 +14,7 @@
 	"containerEnv": {
 		"ASPNETCORE_ENVIRONMENT": "Development"
 	},
-	"postCreateCommand": "dotnet restore && dotnet tool restore && yarn install"
+	"postCreateCommand": "dotnet restore && dotnet tool restore && yarn install",
+	"remoteUser": "vscode"
+	// "mounts": ["source=/home/borislaw-sotnikow/.config/gh,target=/home/vscode/.config/gh"]
 }

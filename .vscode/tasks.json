@@ -29,9 +29,6 @@
                 "--generate-notes"
             ],
             "problemMatcher": [],
-            "dependsOn": [
-                "dotnet: pack"
-            ]
         }
     ],
     "inputs": [
