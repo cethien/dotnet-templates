@@ -1,0 +1,24 @@
+{
+	"npm.packageManager": "pnpm",
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[razor]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[aspnetcorerazor]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[csharp]": {
+		"editor.defaultFormatter": "ms-dotnettools.csharp"
+	}
+}

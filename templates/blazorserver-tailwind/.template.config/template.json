@@ -26,20 +26,11 @@
 			"datatype": "choice",
 			"choices": [
 				{
-					"choice": "net6.0"
-				},
-				{
 					"choice": "net7.0"
 				}
 			],
-			"defaultValue": "net6.0",
+			"defaultValue": "net7.0",
 			"replaces": "{TargetFramework}"
-		},
-		"vscode": {
-			"type": "parameter",
-			"description": "enable .vscode with recommendations and tasks",
-			"datatype": "bool",
-			"defaultValue": "true"
 		},
 		"docker": {
 			"type": "parameter",
@@ -60,15 +51,7 @@
 						".template.config/**/*",
 						"**/*.filelist",
 						"**/*.user",
-						"**/*.lock.json",
-						"**/node_modules/**",
-						"**/wwwroot/css/app.min.css"
-					]
-				},
-				{
-					"condition": "(!vscode)",
-					"exclude": [
-						"**/.vscode/**"
+						"**/node_modules/**"
 					]
 				},
 				{
