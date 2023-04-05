@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	@apply bg-white  text-black dark:bg-slate-700 dark:text-white;
+}
+
+* {
+	@apply focus:outline-none;
+}
+
+button {
+	@apply rounded-md bg-sky-700 px-4 py-1 duration-150 ease-in-out enabled:hover:scale-110 enabled:hover:bg-sky-500 disabled:cursor-not-allowed disabled:bg-slate-500;
+}

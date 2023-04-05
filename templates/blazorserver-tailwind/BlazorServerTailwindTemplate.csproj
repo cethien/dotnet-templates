@@ -7,18 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0-preview.2.23128.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0-preview.2.23128.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <Target Name="CheckForNpm" BeforeTargets="BuildCSS">
-    <Exec Command="npm -v" ContinueOnError="true">
+    <Exec Command="npm --version;" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
     </Exec>
-    <Error Condition="'$(ErrorCode)' != '0'" Text="You must install NPM to build this project" />
+    <Error Condition="'$(ErrorCode)' != '0'" Text="You must install npm to build this project" />
   </Target>
 
   <Target Name="BuildCSS" BeforeTargets="Compile">
-    <Exec EnvironmentVariables="NODE_ENV=production" Command="npm run build:css"
+    <Exec Command="npm run build:css"
       Condition=" '$(Configuration)' == 'Release' " />
   </Target>
 
