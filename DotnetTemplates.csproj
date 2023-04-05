@@ -14,7 +14,8 @@
     <RepositoryUrl>https://github.com/Cethien/dotnet-templates</RepositoryUrl>
     <PackageTags>dotnet-new;templates</PackageTags>
 
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>./README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
@@ -24,6 +25,7 @@
   <ItemGroup>
     <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
     <Compile Remove="**\*" />
+    <None Include=".\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
