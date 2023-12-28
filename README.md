@@ -1,3 +1,5 @@
+!!! archived because I dont use it anymore
+
 # Dotnet Templates
 
 **DRY**: **D**on't **R**epeat **Y**ourself
